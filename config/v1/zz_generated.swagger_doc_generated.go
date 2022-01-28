@@ -136,12 +136,23 @@ func (GenericAPIServerConfig) SwaggerDoc() map[string]string {
 	return map_GenericAPIServerConfig
 }
 
+var map_GenericConfig = map[string]string{
+	"EnableMetrics":    "Toggle for metrics",
+	"EnableProfiling":  "Toggle for profiling",
+	"EnableWatermarks": "Toggle for watermarks",
+}
+
+func (GenericConfig) SwaggerDoc() map[string]string {
+	return map_GenericConfig
+}
+
 var map_GenericControllerConfig = map[string]string{
 	"":               "GenericControllerConfig provides information to configure a controller",
 	"servingInfo":    "ServingInfo is the HTTP serving information for the controller's endpoints",
 	"leaderElection": "leaderElection provides information to elect a leader. Only override this if you have a specific need",
 	"authentication": "authentication allows configuration of authentication for the endpoints",
 	"authorization":  "authorization allows configuration of authentication for the endpoints",
+	"genericConfig":  "GenericConfig allows configuration of GenericAPIServer parameters",
 }
 
 func (GenericControllerConfig) SwaggerDoc() map[string]string {

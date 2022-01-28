@@ -112,7 +112,7 @@ type LeaderElection struct {
 	RetryPeriod metav1.Duration `json:"retryPeriod"`
 }
 
-type GenericConfig struct {
+type MetricsConfig struct {
 	// Toggle for metrics
 	EnableMetrics bool `json:"EnableMetrics,omitempty"`
 	// Toggle for profiling
@@ -307,8 +307,8 @@ type GenericControllerConfig struct {
 	// authorization allows configuration of authentication for the endpoints
 	Authorization DelegatedAuthorization `json:"authorization"`
 
-	// GenericConfig allows configuration of GenericAPIServer parameters
-	GenericConfig GenericConfig `json:"genericConfig"`
+	// MetricsConfig allows toggling of controller metrics
+	MetricsConfig MetricsConfig `json:"metricsConfig"`
 }
 
 // DelegatedAuthentication allows authentication to be disabled.
